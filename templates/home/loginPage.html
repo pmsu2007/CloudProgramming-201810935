@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-box">
+    <div class="login-title">
+        LOGIN
+    </div>
+    <form class="login-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="login-input-box">
+            <label class="login-label">
+                Username
+            </label>
+            <input class="login-input" type="text" name="username" id="username">
+        </div>
+        <div class="login-input-box">
+            <label class="login-label">
+                Password
+            </label>
+            <input class="login-input" type="password" name="password" id="password">
+        </div>
+        <button type="submit" class="login-btn">GO</button>
+    </form>
+    <a class="login-register" href="/register">register?</a>
+</div>
+{% endblock %}

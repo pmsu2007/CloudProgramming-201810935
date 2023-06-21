@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load home_filter %}
+{% block content %}
+<div class="goal-detail-container">
+    <div class="goal-detail-box">
+        <div class="goal-detail-edit-box">
+            <div class="goal-detail-edit-btn" onclick='location.href="/goal/update/{{ goal.pk }}";'>
+                수정
+            </div>
+            <div class="goal-detail-edit-btn" onclick='location.href="/goal/delete/{{ goal.pk }}";'>
+                삭제
+            </div>
+        </div>
+    </div>
+    <div class="goal-detail-content-container">
+        <div class="goal-detail-content-box">
+            <div class="goal-detail-left-box">
+                <div class="goal-detail-img-box">
+                    <img class="goal-detail-img" src="{{ goal.image.url }}">
+                </div>
+            </div>
+            <div class="goal-detail-right-box">
+                <div class="goal-detail-content-item">
+                    {{ goal.title }}
+                </div>
+                <div class="goal-detail-content-item">
+                    {{ goal.amount | convertWon }}
+                </div>
+                <div class="goal-detail-content-description">
+                    {{ goal.description }}
+                </div>
+            </div>
+        </div>
+        <div class="goal-detail-progress-box">
+            <progress class="goal-detail-progress" value="{{ goal.amount | convertPercentage:account.balance }}" min="0" max="100"></progress>
+            <div>{{ goal.amount | convertPercentage:account.balance}}%</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

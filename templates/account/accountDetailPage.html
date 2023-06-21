@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load account_filter %}
+{% block content %}
+<div class="account-detail-container">
+    {% if transaction.type == 'INCOME'%}
+    <div class="account-detail-income-box">
+        <div class="account-detail-edit-box">
+            <div class="account-detail-edit-btn" onclick='location.href="/account/update/{{ transaction.pk }}";'>
+                수정
+            </div>
+            <div class="account-detail-edit-btn" onclick='location.href="/account/delete/{{ transaction.pk }}";'>
+                삭제
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="account-detail-expense-box">
+        <div class="account-detail-edit-box">
+            <div class="account-detail-edit-btn" onclick='location.href="/account/update/{{ transaction.pk }}";'>
+                수정
+            </div>
+            <div class="account-detail-edit-btn" onclick='location.href="/account/delete/{{ transaction.pk }}";'>
+                삭제
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="account-detail-content-box">
+        <div class="account-detail-content-item">
+            {{ transaction.title }}
+        </div>
+        <div class="account-detail-content-item">
+            {{ transaction.date | convertDateTime }}
+        </div>
+        <div class="account-detail-balance-box">
+            <div class="account-detail-balance-item">
+                {{ transaction.amount | convertWon}}
+            </div>
+            <div class="account-detail-balance-item">
+                현재 잔고: {{ balance | convertWon}}
+            </div>
+        </div>
+        <div class="account-detail-content-description">
+            {{ transaction.description }}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

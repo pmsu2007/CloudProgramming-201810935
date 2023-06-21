@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="goal-create-container">
+    <form class="goal-create-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="goal-create-left-box">
+            <div class="goal-create-preview-box">
+                <img class="goal-preview-img">
+            </div>
+            <label class="goal-img-label" for="id_image">이미지 업로드</label>
+            <input class="goal-img-input" type="file" accept="image/*" name="image" required id="id_image">
+        </div>
+        <div class="goal-create-right-box">
+            <div class="goal-create-input-box">
+                <label class="goal-create-label">
+                    제목
+                </label>
+                <input class="goal-create-input" type="text" name="title" required id ="id_title" maxlength="20">
+            </div>
+            <div class="goal-create-input-box">
+                <label class="goal-create-label">
+                    설명
+                </label>
+                <input class="goal-create-input" type="text" name="description" required id ="id_description">
+            </div>
+            <div class="goal-create-input-box">
+                <label class="goal-create-label">
+                    금액
+                </label>
+                <input class="goal-create-input" type="number" name="amount" required id ="id_amount">
+            </div>
+            <button class="goal-create-btn" type="submit">등록</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

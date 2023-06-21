@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load account_filter %}
+{% block content %}
+<div class="account-create-container">
+    <form class="account-create-form" action="{% url 'transaction_update' transaction.id %}" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="account-create-input-box">
+            <label class="account-create-label">
+                제목
+            </label>
+            <input class="account-create-input" type="text" name="title" required id ="id_title" maxlength="20" placeholder="{{ transaction.title }}">
+        </div>
+        <div class="account-create-input-box">
+            <label class="account-create-label">
+                설명
+            </label>
+            <input class="account-create-input" type="text" name="description" required id ="id_description" placeholder="{{ transaction.description }}">
+        </div>
+        <div class="account-create-input-box">
+            <label class="account-create-label">
+                날짜 {{ transaction.date | convertDateTime }}
+            </label>
+            <input class="account-create-input" type="datetime-local" name="date" required id ="id_date" data-placeholder="{{ transaction.date }}">
+        </div>
+        <div class="account-create-input-box">
+            <label class="account-create-label">
+                금액
+            </label>
+            <input class="account-create-input" type="number" name="amount" required id ="id_amount" placeholder="{{ transaction.amount }}">
+        </div>
+        <button class="account-transaction-btn" type="submit">등록</button>
+    </form>
+</div>
+{% endblock %}

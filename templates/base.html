@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 가계부</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homePage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accountPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accountDetailPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accountCreatePage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loginPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registerPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/goalCreatePage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/goalDetailPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/goalDeletePage.css' %}">
+</head>
+<body>
+<div class="base-container">
+    <!-- navigation bar -->
+    {% include "nav.html" %}
+
+    <!-- content -->
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+
+<script async src="{% static 'js/goal.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+.register-box {
+    width: 680px;
+    height: 740px;
+
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px;
+    margin: 90px 0;
+}
+
+.register-title {
+    font-size: 50px;
+}
+
+.register-form {
+    width: 590px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-input-box {
+    width: 590px;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-label {
+    width: 160px;
+    font-size: 36px;
+    text-align: end;
+}
+
+.register-input {
+    width: 400px;
+    height: 80px;
+
+    font-size: 30px;
+    padding: 10px;
+
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+.register-btn {
+    width: 500px;
+    height: 80px;
+
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 2px solid black;
+
+    font-size: 36px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.register-register {
+    font-size: 24px;
+    color: black;
+}

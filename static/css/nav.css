@@ -1,0 +1,29 @@
+.nav-container {
+    width: 1440px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+}
+
+.nav-menu-container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.nav-menu-item {
+    width: 200px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu-item > a {
+    color: black;
+    text-decoration-line: none;
+}

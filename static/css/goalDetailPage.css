@@ -1,0 +1,132 @@
+.goal-detail-container {
+    width: 1300px;
+    height: 830px;
+
+    border-radius: 12px;
+    border: 2px solid black;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    margin: 60px 0;
+}
+
+.goal-detail-box {
+    width: 100%;
+    height: 150px;
+
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid #D9D9D9;
+
+    background-color: #D9D9D9;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.goal-detail-edit-box {
+    width: 250px;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.goal-detail-edit-btn {
+    width: 110px;
+    height: 80px;
+
+    text-align: center;
+    line-height: 80px;
+    font-size: 45px;
+
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color: white;
+
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.goal-detail-content-container {
+    width: 100%;
+    min-height: calc(100% - 150px);
+    padding: 60px 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    box-sizing: border-box;
+}
+
+.goal-detail-content-box {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.goal-detail-left-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goal-detail-img-box {
+    width: 500px;
+    height: 500px;
+
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.goal-detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.goal-detail-right-box {
+    width: calc(100% - 550px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+}
+
+.goal-detail-content-item {
+    font-size: 46px;
+}
+
+.goal-detail-content-description {
+    font-size: 30px;
+}
+
+.goal-detail-progress-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.goal-detail-progress {
+    width: 950px;
+    height: 25px;
+
+    border: 2px solid black;
+}
+
+.goal-detail-progress::-webkit-progress-bar {
+    background-color: white;
+}
+
+.goal-detail-progress::-webkit-progress-value {
+    background-color: grey;
+}

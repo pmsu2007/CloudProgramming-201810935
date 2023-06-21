@@ -1,0 +1,156 @@
+.home-container {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+
+    margin: 70px 0;
+    padding: 0 70px;
+
+    box-sizing: border-box;
+}
+
+.home-user-container {
+    width: 100%;
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 70px;
+}
+
+.home-user-image-box {
+    width: 250px;
+    height: 250px;
+
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.home-user-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.home-user-balance-box {
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+}
+
+.home-user-balance-title {
+    font-size: 36px;
+}
+
+.home-user-balance-content {
+    font-size: 80px;
+}
+
+
+
+.home-goal-title-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.home-goal-title {
+    font-size: 56px;
+}
+
+.home-goal-btn {
+    width: 140px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid black;
+
+    font-size: 46px;
+    cursor: pointer;
+}
+
+.home-goal-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.home-goal-item {
+    width: 1300px;
+    height: 250px;
+
+    display: flex;
+
+    box-sizing: border-box;
+    padding: 25px 45px;
+
+    border: 2px solid black;
+    border-radius: 12px;
+    margin-bottom: 40px;
+
+    cursor: pointer;
+}
+
+.home-goal-item-image-box {
+    width: 200px;
+    height: 200px;
+
+    box-sizing: border-box;
+    border: 2px solid black;
+
+    margin-right: 120px;
+}
+
+.home-goal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.home-goal-item-info-box {
+    width: 900px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-goal-item-info {
+    font-size: 36px;
+}
+
+.home-goal-item-progress-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-goal-item-progress {
+    width: 800px;
+    height:20px;
+
+    border: 2px solid black;
+}
+
+.home-goal-item-progress::-webkit-progress-bar {
+    background-color: white;
+}
+
+.home-goal-item-progress::-webkit-progress-value {
+    background-color: grey;
+}
+

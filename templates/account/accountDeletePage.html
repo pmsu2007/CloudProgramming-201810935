@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="delete-container">
+    <div class="delete-box">
+        <div class="delete-title">
+            정말로 삭제하시겠습니까 ?
+        </div>
+        <div class="delete-btn-box">
+        <form action="{% url 'transaction_delete' pk=transaction.pk %}" method="post">
+            {% csrf_token %}
+            <button class="delete-btn" type="submit">GO</button>
+        </form>
+        <button class="delete-btn" onclick="location.href='{% url 'transaction_list' %}';">NO</button>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

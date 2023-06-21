@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load home_filter %}
+{% block content %}
+    <div class="home-container">
+        {% if user.is_authenticated %}
+        <div class="home-user-container">
+            <div class="home-user-balance-box">
+                <div class="home-user-balance-title">
+                    23년도 {{ account.user.username }}님의 총 자산 현황
+                </div>
+                <div class="home-user-balance-content">
+                    {{ account.balance | convertWon }}
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <div class="wallpaper">
+             나만의 가계부 <br> 나의 수입/지출을 관리하고 <br> 목표를 설정하고 달성하는 서비스 입니다.
+            </div>
+        {% endif %}
+        <div class="home-goal-title-box">
+            <div class="home-goal-title">
+                    목표
+            </div>
+            <div class="home-goal-btn" onclick='location.href="goal/create"'>
+                    +
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="home-goal-container">
+            {% if goal_list %}
+                {% for g in goal_list %}
+                <div class="home-goal-item" onclick='location.href="{{ g.get_absolute_url }}"'>
+                    <div class="home-goal-item-image-box">
+                        {% if g.image %}
+                            <img class="home-goal-image" src="{{ g.image.url }}">
+                        {% else %}
+                            <img class="home-goal-image" src="/static/images/default-goal-image.png">
+                        {% endif %}
+                    </div>
+                    <div class="home-goal-item-info-box">
+                        <div class="home-goal-item-info">
+                            {{ g.title }}
+                        </div>
+                        <div class="home-goal-item-info">
+                            {{ g.amount | convertWon }}
+                        </div>
+                        <div class="home-goal-item-progress-box">
+                            <progress class="home-goal-item-progress" value="{{ g.amount | convertPercentage:account.balance }}" min="0" max="100"></progress>
+                            <div>{{ g.amount | convertPercentage:account.balance}}%</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <div class="no-box">
+                    목표를 추가해주세요 !
+                </div>
+            {% endif %}
+    </div>
+{% endblock %}

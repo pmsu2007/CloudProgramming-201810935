@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'AppleSDGothicNeoM';
+    src:url('../font/AppleSDGothicNeoM.ttf') format('truetype');
+    font-weight: normal;
+}
+
+* {
+    font-family: 'AppleSDGothicNeoM';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.base-container {
+    width: 1440px;
+    min-height: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.horizontal-line {
+    border-bottom: 2px solid black;
+    margin-bottom: 60px;
+}
+
+.no-box {
+    margin-top: 40px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.wallpaper {
+    font-size: 60px;
+    text-align: center;
+    line-height: 120px;
+    margin-bottom: 20px;
+}

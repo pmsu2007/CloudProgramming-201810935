@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load account_filter %}
+{% block content %}
+<div class="account-container">
+    {% if user.authenticated %}
+    <div class="account-balance-container">
+        <div class="account-balance-box">
+            <div class="account-balance-content">
+                총 자산 현황
+            </div>
+            <div class="account-balance-content">
+                {{ balance | convertWon }}
+            </div>
+        </div>
+        <div class="account-balance-box">
+            <div class="account-balance-content">
+                수입
+            </div>
+            <div class="account-balance-content">
+                {{ income | convertWon }}
+            </div>
+        </div>
+        <div class="account-balance-box">
+            <div class="account-balance-content">
+                지출
+            </div>
+            <div class="account-balance-content">
+                {{ expense | convertWon }}
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="account-balance-container">
+        <div class="account-balance-box">
+            <div class="account-balance-content">
+                총 자산 현황
+            </div>
+            <div class="account-balance-content">
+                {{ 0 | convertWon }}
+            </div>
+        </div>
+        <div class="account-balance-box">
+            <div class="account-balance-content">
+                수입
+            </div>
+            <div class="account-balance-content">
+                {{ 0 | convertWon }}
+            </div>
+        </div>
+        <div class="account-balance-box">
+            <div class="account-balance-content">
+                지출
+            </div>
+            <div class="account-balance-content">
+                {{ 0 | convertWon }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="account-filter-container">
+        <div class="account-filter-box">
+            <div class="account-type-box">
+                <div class="account-type-item" onclick='location.href="{% url 'transaction_list' %}";'>
+                    전체
+                </div>
+                <div class="account-type-item" onclick='function income() {
+                  location.href = `${location.pathname + "?type=INCOME"}`;
+                } income() '>
+                    수입
+                </div>
+                <div class="account-type-item" onclick='function expense() {
+                  location.href = "/account/?type=EXPENSE";
+                } expense() '>
+                    지출
+                </div>
+            </div>
+            <div class="account-time-box">
+                <div class="account-time-item" onclick='function asc() {
+                  location.href = `${location.pathname + "?sort=asc"}`;
+                } asc() '>
+                    최신순
+                </div>
+                <div class="account-time-item" onclick='function desc() {
+                  location.href = `${location.pathname + "?sort=desc"}`;
+                } desc() '>
+                    과거순
+                </div>
+            </div>
+        </div>
+        <div class="account-balance-btn" onclick='location.href="create"'>
+            +
+        </div>
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="account-history-container">
+    {% if transaction_list %}
+        {% for t in transaction_list %}
+            {% if t.type == 'INCOME'%}
+            <div class="account-history-box" onclick='location.href="{{ t.get_absolute_url }}";'>
+                <div class="account-income-color">
+                </div>
+                <div class="account-history-info-box">
+                    <div class="account-history-info-date">
+                        {{ t.date | convertDate }}
+                    </div>
+                    <div class="account-history-info">
+                        {{ t.title }}
+                    </div>
+                    <div class="account-history-info">
+                        {{ t.amount | convertWon }}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="account-history-box" onclick='location.href="{{ t.get_absolute_url }}";'>
+                <div class="account-expense-color">
+                </div>
+                <div class="account-history-info-box">
+                    <div class="account-history-info-date">
+                        {{ t.date | convertDate }}
+                    </div>
+                    <div class="account-history-info">
+                        {{ t.title }}
+                    </div>
+                    <div class="account-history-info">
+                        {{ t.amount | convertWon }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="no-box">
+            No Transaction
+        </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

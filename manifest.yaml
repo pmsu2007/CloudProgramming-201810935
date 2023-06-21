@@ -1,0 +1,7 @@
+---
+applications:
+- name: account-201810935
+  buildpack: paketo-buildpacks/python
+  memory: 256M
+  instances: 1
+  command: waitress-serve --port=8080 CloudProject.wsgi:application
